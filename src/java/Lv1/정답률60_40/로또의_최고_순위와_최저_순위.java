@@ -1,13 +1,7 @@
-import java.util.*;
-import java.util.Map;
-import java.util.HashSet;
-import java.util.Set;
+package java.Lv1.정답률60_40;
 
-public class newAnswer{
-    public static void main(String[] args) {
-        int[] lottos = {0, 0, 0, 0, 0, 0};
-        int[] win_nums = {38, 19, 20, 40, 15, 25};
-
+public class 로또의_최고_순위와_최저_순위 {
+    public int[] solution(int[] lottos, int[] win_nums) {
         int[] answer = new int[2];
 
         int HitCount = 0;
@@ -30,7 +24,7 @@ public class newAnswer{
 
         answer[0] = rankCount(maxRank);
         answer[1] = rankCount(minRank);
-        System.out.println(Arrays.toString(answer));
+        return answer;
     }
     static int rankCount(int number){
         if(number == 0) return 6;
