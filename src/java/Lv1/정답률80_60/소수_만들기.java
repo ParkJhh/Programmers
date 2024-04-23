@@ -1,26 +1,19 @@
-import java.util.*;
-import java.util.Map;
-import java.util.HashSet;
-import java.util.Set;
+package java.Lv1.정답률80_60;
 
-public class newAnswer{
-    public static void main(String[] args) {
-
-
-        int nums[] = {1,2,7,6,4};
+public class 소수_만들기 {
+    public int solution(int[] nums) {
         int answer = 0;
 
         for(int i =0; i < nums.length; i++){
             for(int j=i+1; j< nums.length; j++){
                 for(int k=j+1; k< nums.length; k++){
                     if(primeChk(nums[i] + nums[j] + nums[k])){
-                        System.out.println(nums[i] + "+" + nums[j] + "+" + nums[k]);
                         answer++;
                     }
                 }
             }
         }
-        System.out.println(answer);
+        return answer;
     }
 
     static boolean primeChk(int number) {
