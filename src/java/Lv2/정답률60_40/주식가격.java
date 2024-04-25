@@ -1,13 +1,9 @@
-import java.lang.reflect.Array;
+package java.Lv2.정답률60_40;
+
 import java.util.*;
-import java.util.Map;
-import java.util.HashSet;
-import java.util.Set;
 
-public class newAnswer{
-    public static void main(String[] args) {
-
-        int[] prices = {4,3,2,1};
+public class 주식가격 {
+    public ArrayList<Integer> solution(int[] prices) {
         int count = 0;
         ArrayList<Integer> answer = new ArrayList<>();
 
@@ -23,6 +19,6 @@ public class newAnswer{
             answer.add(count);
             count = 0;
         }
-        System.out.println(answer);
+        return answer;
     }
 }
