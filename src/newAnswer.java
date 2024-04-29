@@ -7,22 +7,22 @@ import java.util.Set;
 public class newAnswer{
     public static void main(String[] args) {
 
-        int[] prices = {4,3,2,1};
-        int count = 0;
-        ArrayList<Integer> answer = new ArrayList<>();
-
-        for(int i =0; i < prices.length; i++){
-            for(int j = i+1; j < prices.length; j++){
-                if(prices[i] <= prices[j]){
-                    count++;
-                } else {
-                    count++;
-                    break;
+        int n = 10;
+        boolean[] isPrime = new boolean[n + 1];
+        for (int i = 2; i < isPrime.length; i++) {
+            isPrime[i] = true;
+        }
+        for (int i = 2; i * i <= n; i++) {
+            if (isPrime[i]) {
+                for (int j = i * i; j <= n; j += i) {
+                    isPrime[j] = false;
                 }
             }
-            answer.add(count);
-            count = 0;
         }
-        System.out.println(answer);
+
+        int answer= 0;
+        for (int i = 2; i < isPrime.length; i++) {
+            if (isPrime[i]) answer++;
+        }
     }
 }
