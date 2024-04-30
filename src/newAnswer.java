@@ -7,22 +7,26 @@ import java.util.Set;
 public class newAnswer{
     public static void main(String[] args) {
 
-        int n = 10;
-        boolean[] isPrime = new boolean[n + 1];
-        for (int i = 2; i < isPrime.length; i++) {
-            isPrime[i] = true;
-        }
-        for (int i = 2; i * i <= n; i++) {
-            if (isPrime[i]) {
-                for (int j = i * i; j <= n; j += i) {
-                    isPrime[j] = false;
-                }
-            }
-        }
+        int []A = {1, 2};
+        int []B = {1,2,3,4,5,6,7,8,9};
+        int answer = 0;
+        ArrayList<Integer> newA = new ArrayList<>();
+        ArrayList<Integer> newB = new ArrayList<>();
 
-        int answer= 0;
-        for (int i = 2; i < isPrime.length; i++) {
-            if (isPrime[i]) answer++;
+        //A는 오름차순, B는 내림차순
+        Arrays.sort(A);
+        for(int i=0; i<B.length; i++){
+            newB.add(B[i]);
         }
+        newB.sort(Collections.reverseOrder());
+
+        System.out.println(newA);
+        System.out.println(newB);
+
+        //길이가 가장 짦은 것으로 계산
+        for(int i =0; i< A.length; i++){
+            answer += A[i] * newB.get(i);
+        }
+        System.out.println(answer);
     }
 }
