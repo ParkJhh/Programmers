@@ -1,14 +1,9 @@
-import java.lang.reflect.Array;
-import java.util.*;
-import java.util.Map;
-import java.util.HashSet;
-import java.util.Set;
+package java.Lv2.정답률80_60;
 
-public class newAnswer{
-    public static void main(String[] args) {
-        int n = 78;
+public class 다음_큰_숫자 {
+    public int solution(int n) {
         int answer = 0;
-        //for문 길이 그냥 고정값;
+        //for문 길이 그냥 고정값
         for(int i = n+1; n <= 1000000; i++){
             //첫번째 조건
             if(i > n){
@@ -21,6 +16,6 @@ public class newAnswer{
                 }
             }
         }
-        System.out.println(answer);
+        return answer;
     }
 }
