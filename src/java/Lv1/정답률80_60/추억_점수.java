@@ -1,24 +1,18 @@
-import java.lang.reflect.Array;
+package java.Lv1.정답률80_60;
+
 import java.util.*;
-import java.util.Map;
-import java.util.HashSet;
-import java.util.Set;
 
-public class newAnswer{
-    public static void main(String[] args) {
-
-        String[] name = {"may", "kein", "kain", "radi"};
-        int[] yearning = {5, 10, 1, 3};
-        String[][] photo = {{"may"},{"kein", "deny", "may"}, {"kon", "coni"}};
-
-
+public class 추억_점수 {
+    public ArrayList<Integer> solution(String[] name, int[] yearning, String[][] photo) {
+        
         ArrayList<Integer> answer = new ArrayList<>();
-        int point = 0;
         ArrayList<String> nameChk = new ArrayList<>();
+
+        int point = 0;
+        //비교용 새로담기
         for(int i =0; i < name.length; i++){
             nameChk.add(name[i]);
         }
-
 
         for(int i =0; i < photo.length; i++){
             for(int j = 0; j< photo[i].length; j++){
@@ -30,8 +24,6 @@ public class newAnswer{
             answer.add(point);
             point = 0;
         }
-
-
-        System.out.println(answer);
+        return answer;
     }
 }
