@@ -6,32 +6,32 @@ import java.util.Set;
 
 public class newAnswer{
     public static void main(String[] args) {
-
-        String[] name = {"may", "kein", "kain", "radi"};
-        int[] yearning = {5, 10, 1, 3};
-        String[][] photo = {{"may"},{"kein", "deny", "may"}, {"kon", "coni"}};
-
+        int[] progresses = {93, 30, 55};
+        int[] speeds = {1, 30, 5};
 
         ArrayList<Integer> answer = new ArrayList<>();
-        int point = 0;
-        ArrayList<String> nameChk = new ArrayList<>();
-        for(int i =0; i < name.length; i++){
-            nameChk.add(name[i]);
-        }
-
-
-        for(int i =0; i < photo.length; i++){
-            for(int j = 0; j< photo[i].length; j++){
-                if(nameChk.contains(photo[i][j])){
-                    int x = nameChk.indexOf(photo[i][j]);
-                    point += yearning[x];
+        //날짜 계산
+        int day = 0;
+        for(int i = 0; i < progresses.length; i++){
+            for(int j =0; j <= 100; j++){
+                progresses[i] += speeds[i];
+                day++;
+                if(progresses[i] >= 100){
+                    answer.add(day);
+                    day = 0;
+                    break;
                 }
             }
-            answer.add(point);
-            point = 0;
         }
-
-
         System.out.println(answer);
+
+        ArrayList<Integer> dayCount = new ArrayList<>();
+        //앞의 기능이 되어야만함
+        for(int i =0; i < answer.size(); i++){
+            if(answer.get(i) >= answer.get(i+1)){
+                dayCount.add(answer.get(i));
+            }
+        }
+        System.out.println(dayCount);
     }
 }
