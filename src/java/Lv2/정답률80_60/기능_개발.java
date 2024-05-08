@@ -1,14 +1,9 @@
-import java.lang.reflect.Array;
+package java.Lv2.정답률80_60;
+
 import java.util.*;
-import java.util.Map;
-import java.util.HashSet;
-import java.util.Set;
 
-public class newAnswer{
-    public static void main(String[] args) {
-        int[] progresses = {93, 30, 55};
-        int[] speeds = {1,30 ,5};
-
+public class 기능_개발 {
+    public ArrayList<Integer> solution(int[] progresses, int[] speeds) {
         ArrayList<Integer> answer = new ArrayList<>();
         //날짜 계산
         int day = 0;
@@ -37,6 +32,7 @@ public class newAnswer{
                     i = j - 1;
                     break;
                 }
+                //마지막 비교인 경우
                 if(j == answer.size() -1){
                     dayCount.add(logic);
                     i = j;
@@ -45,6 +41,7 @@ public class newAnswer{
             }
             logic = 0;
         }
-        System.out.println(dayCount);
+        return dayCount;
     }
+
 }
