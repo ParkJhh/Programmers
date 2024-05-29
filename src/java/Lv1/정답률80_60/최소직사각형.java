@@ -1,13 +1,7 @@
-import java.lang.reflect.Array;
-import java.util.*;
-import java.util.Map;
-import java.util.HashSet;
-import java.util.Set;
+package java.Lv1.정답률80_60;
 
-public class newAnswer{
-    public static void main(String[] args) {
-        int[][] sizes = {{60, 50}, {30, 70}, {60, 30}, {80, 40}};
-
+public class 최소직사각형 {
+    public int solution(int[][] sizes) {
         int longMax = 1;
         int shortMax = 1;
 
@@ -26,7 +20,6 @@ public class newAnswer{
         }
 
         int answer = longMax * shortMax;
-        System.out.println(answer);
+        return answer;
     }
 }
-
